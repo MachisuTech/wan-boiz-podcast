@@ -12,14 +12,20 @@
   <meta property="og:description" content="Real conversations on growth, lifestyle, friendships, and the daily hustle straight from Kisumu." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://machisutech.github.io/wan-boiz-podcast/" />
+  <!-- Podcast Cover Art for Link Previews -->
+  <meta property="og:image" content="https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/a4/0f/55/a40f5551-fb18-f21a-7b56-c4dceaa57e3f/mza_10673967839352932970.jpg/600x600bb.jpg" />
 
   <style>
     :root {
-      --bg-color: #0f172a;
-      --card-bg: #1e293b;
+      /* Theme palette matching the pink, cyan & purple marble artwork */
+      --bg-color: #0d0914;
+      --card-bg: #1a1228;
       --text-color: #f8fafc;
-      --accent-color: #f59e0b;
-      --hover-color: #d97706;
+      --accent-pink: #ec4899;
+      --accent-cyan: #06b6d4;
+      --accent-green: #10b981;
+      --gradient-accent: linear-gradient(135deg, #ec4899 0%, #a855f7 50%, #06b6d4 100%);
+      --hover-color: #db2777;
     }
     body {
       font-family: system-ui, -apple-system, sans-serif;
@@ -31,12 +37,24 @@
     }
     header {
       text-align: center;
-      padding: 4rem 1rem 2rem;
+      padding: 3rem 1rem 2rem;
+    }
+    .cover-art {
+      width: 220px;
+      height: 220px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(236, 72, 153, 0.3);
+      object-fit: cover;
+      margin-bottom: 1.5rem;
+      border: 2px solid rgba(255, 255, 255, 0.1);
     }
     h1 {
       font-size: 2.5rem;
       margin-bottom: 0.5rem;
-      color: var(--accent-color);
+      background: var(--gradient-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
     }
     .container {
       max-width: 800px;
@@ -45,11 +63,16 @@
     }
     .card {
       background-color: var(--card-bg);
-      border-radius: 8px;
-      padding: 1.5rem;
+      border-radius: 12px;
+      padding: 1.75rem;
       margin-bottom: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
     }
-    .video-container {
+    h2 {
+      color: var(--accent-cyan);
+      margin-top: 0;
+    }
+    .video-container, .map-container {
       position: relative;
       padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
       height: 0;
@@ -57,7 +80,7 @@
       border-radius: 8px;
       margin-top: 1rem;
     }
-    .video-container iframe {
+    .video-container iframe, .map-container iframe {
       position: absolute;
       top: 0;
       left: 0;
@@ -73,16 +96,38 @@
     }
     .links a {
       display: inline-block;
-      background-color: var(--accent-color);
-      color: #000;
+      background: var(--gradient-accent);
+      color: #ffffff;
       text-decoration: none;
       padding: 0.75rem 1.25rem;
-      border-radius: 6px;
+      border-radius: 8px;
       font-weight: bold;
-      transition: background-color 0.2s ease;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    .links a.btn-green {
+      background: #10b981;
     }
     .links a:hover {
-      background-color: var(--hover-color);
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+    .mpesa-box {
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid var(--accent-green);
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin-top: 1rem;
+    }
+    .mpesa-box h3 {
+      color: var(--accent-green);
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+    .number-highlight {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ffffff;
+      letter-spacing: 1px;
     }
     .episode-list {
       list-style: none;
@@ -91,14 +136,14 @@
     }
     .episode-item {
       padding: 1rem 0;
-      border-bottom: 1px solid #334155;
+      border-bottom: 1px solid #2d1f42;
     }
     .episode-item:last-child {
       border-bottom: none;
     }
     .episode-title {
       font-weight: bold;
-      color: var(--accent-color);
+      color: var(--accent-pink);
     }
     footer {
       text-align: center;
@@ -111,18 +156,35 @@
 <body>
 
   <header>
+    <!-- Podcast Artwork -->
+    <img 
+      src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/a4/0f/55/a40f5551-fb18-f21a-7b56-c4dceaa57e3f/mza_10673967839352932970.jpg/600x600bb.jpg" 
+      alt="WAN BOIZ PODCAST Cover Art" 
+      class="cover-art" 
+    />
     <h1>WAN BOIZ PODCAST</h1>
     <p>Real conversations on growth, lifestyle, friendships, and the daily hustle.</p>
   </header>
 
   <div class="container">
     
-    <!-- 1. Embedded Media Player -->
+    <!-- Embedded Media Player -->
     <section class="card">
       <h2>Watch / Listen Live</h2>
       <div class="video-container">
-        <!-- Replace the YouTube URL embed code below with your latest episode URL -->
         <iframe src="https://www.youtube.com/embed?listType=playlist&list=UU7VFwHWdek-iaIRtYXy1szg" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- Support / Fund Me Section -->
+    <section class="card">
+      <h2>Support The Podcast (Fund Us)</h2>
+      <p>Love our content? Help us keep the show going, upgrade our studio equipment, and produce more real conversations!</p>
+      <div class="mpesa-box">
+        <h3>Send via M-Pesa</h3>
+        <p style="margin: 0 0 0.5rem 0;">Send your contribution to:</p>
+        <div class="number-highlight">0768 422 988</div>
+        <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; opacity: 0.8;">Thank you for supporting youth content from Kisumu! 🙏</p>
       </div>
     </section>
 
@@ -137,34 +199,57 @@
       </p>
     </section>
 
-    <!-- 3. Episodes Section -->
+    <!-- Recent Episodes Section -->
     <section class="card">
       <h2>Recent Episodes</h2>
       <ul class="episode-list">
         <li class="episode-item">
-          <div class="episode-title">Episode 1: Navigating Youth Culture & The Hustle</div>
-          <p>An introductory deep dive into our vision, local roots, and what it takes to build a modern community in Kisumu.</p>
+          <div class="episode-title">EPISODE 3: Betrayal In The City</div>
+          <p>Friendship is supposed to be built on trust and loyalty. We dive into broken trust, fake friends, coping with betrayal, and moving forward stronger.</p>
+        </li>
+        <li class="episode-item">
+          <div class="episode-title">EPISODE 2: Is Getting a Degree in Kenya Still Worth It?</div>
+          <p>An honest conversation on youth unemployment, mental health, side hustles, and whether education is still key.</p>
+        </li>
+        <li class="episode-item">
+          <div class="episode-title">EPISODE 1: We Almost Got Kicked Out the Club 😳</div>
+          <p>Our worst bouncer encounter and an intro into our vision, local roots, and youth culture.</p>
         </li>
       </ul>
     </section>
 
-    <!-- Social & Platforms Section -->
+    <!-- Platforms & Social Links -->
     <section class="card">
       <h2>Listen & Follow Us</h2>
       <div class="links">
         <a href="https://podcasts.apple.com/us/podcast/wan-boiz-podcast/id1896814071" target="_blank">Apple Podcasts</a>
         <a href="https://www.youtube.com/channel/UC7VFwHWdek-iaIRtYXy1szg" target="_blank">YouTube Channel</a>
         <a href="https://www.instagram.com/thee_victor_ke" target="_blank">Instagram</a>
-        <a href="https://facebook.com/kisumuliquor.niccur" target="_blank">Facebook</a>
         <a href="https://twitter.com/ses_vic" target="_blank">X (Twitter)</a>
       </div>
     </section>
 
-    <!-- 3. Contact & Booking Section -->
+    <!-- Contact & Directions Section -->
     <section class="card">
-      <h2>Get in Touch</h2>
-      <p>Interested in guest appearances, sponsorship opportunities, or listener feedback?</p>
-      <p><strong>Email:</strong> reach out to us via our social channels listed above.</p>
+      <h2>Contact & Location</h2>
+      <p>Interested in guest appearances, sponsorship opportunities, or listener feedback? Reach out to us directly:</p>
+      <p><strong>Phone:</strong> <a href="tel:0768422988" style="color: var(--accent-cyan); font-weight: bold;">0768 422 988</a></p>
+      
+      <div class="links">
+        <a href="tel:0768422988" class="btn-green">Call Us</a>
+        <a href="https://wa.me/254768422988" target="_blank" class="btn-green">Chat on WhatsApp</a>
+      </div>
+
+      <h3 style="color: var(--accent-pink); margin-top: 1.5rem;">Find Us in Kisumu</h3>
+      <p>We are based in Kisumu, Kenya. View our location and get directions below:</p>
+      
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127673.54345207798!2d34.69806410427845!3d-0.09170162590217992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182aa4bc8bfb40fd%3A0xb6967732d8478d10!2sKisumu!5e0!3m2!1sen!2ske!4v1700000000000!5m2!1sen!2ske" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
     </section>
 
   </div>
