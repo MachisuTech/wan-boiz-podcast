@@ -10,6 +10,7 @@
       --card-bg: #1e293b;
       --text-color: #f8fafc;
       --accent-color: #f59e0b;
+      --hover-color: #d97706;
     }
     body {
       font-family: system-ui, -apple-system, sans-serif;
@@ -39,6 +40,12 @@
       padding: 1.5rem;
       margin-bottom: 1.5rem;
     }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 1rem;
+    }
     .links a {
       display: inline-block;
       background-color: var(--accent-color);
@@ -47,8 +54,10 @@
       padding: 0.75rem 1.25rem;
       border-radius: 6px;
       font-weight: bold;
-      margin-right: 0.5rem;
-      margin-top: 0.5rem;
+      transition: background-color 0.2s ease;
+    }
+    .links a:hover {
+      background-color: var(--hover-color);
     }
     footer {
       text-align: center;
@@ -68,17 +77,22 @@
   <div class="container">
     <section class="card">
       <h2>About The Podcast</h2>
-      <p id="about-text">
-        WAN BOIZ PODCAST is a vibrant show hosted by young voices from Kisumu. We dive into real conversations about growth, lifestyle, friendships, hustle, and the everyday experiences of youth culture.
+      <p>
+        WAN BOIZ PODCAST is a vibrant and relatable show hosted by young voices from the lakeside city of Kisumu. We dive into real conversations about growth, lifestyle, friendships, hustle, and the everyday experiences of youth trying to make it.
+      </p>
+      <p>
+        From personal stories to deep discussions and fun moments, we keep it honest, raw, and entertaining. Whether you're chasing your goals, figuring life out, or just looking for good vibes, this podcast is for you. Tune in and grow with us.
       </p>
     </section>
 
     <section class="card">
-      <h2>Listen & Follow</h2>
+      <h2>Listen & Follow Us</h2>
       <div class="links">
-        <a href="#" target="_blank">Listen on Spotify</a>
-        <a href="#" target="_blank">Apple Podcasts</a>
-        <a href="#" target="_blank">YouTube Channel</a>
+        <a href="https://podcasts.apple.com/us/podcast/wan-boiz-podcast/id1896814071" target="_blank">Apple Podcasts</a>
+        <a href="https://www.youtube.com/channel/UC7VFwHWdek-iaIRtYXy1szg" target="_blank">YouTube Channel</a>
+        <a href="https://www.instagram.com/thee_victor_ke" target="_blank">Instagram</a>
+        <a href="https://facebook.com/kisumuliquor.niccur" target="_blank">Facebook</a>
+        <a href="https://twitter.com/ses_vic" target="_blank">X (Twitter)</a>
       </div>
     </section>
   </div>
