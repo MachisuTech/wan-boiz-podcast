@@ -3,7 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WAN BOIZ PODCAST</title>
+  
+  <!-- SEO & Social Media Preview Tags (Open Graph) -->
+  <title>WAN BOIZ PODCAST | Youth Culture & Real Conversations</title>
+  <meta name="description" content="WAN BOIZ PODCAST brings real conversations on growth, lifestyle, friendships, and the daily hustle straight from Kisumu, Kenya." />
+  
+  <meta property="og:title" content="WAN BOIZ PODCAST" />
+  <meta property="og:description" content="Real conversations on growth, lifestyle, friendships, and the daily hustle straight from Kisumu." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://machisutech.github.io/wan-boiz-podcast/" />
+
   <style>
     :root {
       --bg-color: #0f172a;
@@ -40,6 +49,22 @@
       padding: 1.5rem;
       margin-bottom: 1.5rem;
     }
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
     .links {
       display: flex;
       flex-wrap: wrap;
@@ -59,6 +84,22 @@
     .links a:hover {
       background-color: var(--hover-color);
     }
+    .episode-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+    }
+    .episode-item {
+      padding: 1rem 0;
+      border-bottom: 1px solid #334155;
+    }
+    .episode-item:last-child {
+      border-bottom: none;
+    }
+    .episode-title {
+      font-weight: bold;
+      color: var(--accent-color);
+    }
     footer {
       text-align: center;
       padding: 2rem;
@@ -75,16 +116,39 @@
   </header>
 
   <div class="container">
+    
+    <!-- 1. Embedded Media Player -->
+    <section class="card">
+      <h2>Watch / Listen Live</h2>
+      <div class="video-container">
+        <!-- Replace the YouTube URL embed code below with your latest episode URL -->
+        <iframe src="https://www.youtube.com/embed?listType=playlist&list=UU7VFwHWdek-iaIRtYXy1szg" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- About Section -->
     <section class="card">
       <h2>About The Podcast</h2>
       <p>
         WAN BOIZ PODCAST is a vibrant and relatable show hosted by young voices from the lakeside city of Kisumu. We dive into real conversations about growth, lifestyle, friendships, hustle, and the everyday experiences of youth trying to make it.
       </p>
       <p>
-        From personal stories to deep discussions and fun moments, we keep it honest, raw, and entertaining. Whether you're chasing your goals, figuring life out, or just looking for good vibes, this podcast is for you. Tune in and grow with us.
+        From personal stories to deep discussions and fun moments, we keep it honest, raw, and entertaining. Whether you're chasing your goals, figuring life out, or just looking for good vibes, this podcast is for you.
       </p>
     </section>
 
+    <!-- 3. Episodes Section -->
+    <section class="card">
+      <h2>Recent Episodes</h2>
+      <ul class="episode-list">
+        <li class="episode-item">
+          <div class="episode-title">Episode 1: Navigating Youth Culture & The Hustle</div>
+          <p>An introductory deep dive into our vision, local roots, and what it takes to build a modern community in Kisumu.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Social & Platforms Section -->
     <section class="card">
       <h2>Listen & Follow Us</h2>
       <div class="links">
@@ -95,6 +159,14 @@
         <a href="https://twitter.com/ses_vic" target="_blank">X (Twitter)</a>
       </div>
     </section>
+
+    <!-- 3. Contact & Booking Section -->
+    <section class="card">
+      <h2>Get in Touch</h2>
+      <p>Interested in guest appearances, sponsorship opportunities, or listener feedback?</p>
+      <p><strong>Email:</strong> reach out to us via our social channels listed above.</p>
+    </section>
+
   </div>
 
   <footer>
